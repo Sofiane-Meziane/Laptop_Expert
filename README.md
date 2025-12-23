@@ -2,6 +2,8 @@
 
 **Projet de Machine Learning & Application Web pour l'estimation de prix et la classification d'ordinateurs portables.**
 
+🔗 **Démo en ligne :** [Accéder à l'application](https://laptopexpert-hw7h2dv9gv9otssw7e74hn.streamlit.app/)
+
 Ce projet a été réalisé dans le cadre du module de **Machine Learning (M1 IA)**. Il propose une solution complète (Notebooks d'analyse + Application Web) capable de :
 1.  **Classifier** un ordinateur portable selon sa configuration (Gaming, Ultrabook, Workstation...).
 2.  **Estimer** son prix de marché exact en Euros.
