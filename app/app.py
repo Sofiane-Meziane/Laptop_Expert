@@ -149,7 +149,7 @@ if df_ref is not None:
     # -----------------------------------------------------------------------------
     # 4. LOGIQUE DE PRÉDICTION
     # -----------------------------------------------------------------------------
-    st.title("💻 L'Expert Laptop IA (v2)")
+    st.title("💻 L'Expert Laptop IA ")
     st.markdown("""
     ### Une estimation de précision professionnelle
     Notre IA analyse non seulement la marque, mais aussi le modèle exact du CPU, du GPU et la combinaison de stockage.
