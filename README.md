@@ -1,0 +1,78 @@
+# 💻 Laptop Expert AI
+
+**Projet de Machine Learning & Application Web pour l'estimation de prix et la classification d'ordinateurs portables.**
+
+Ce projet a été réalisé dans le cadre du module de **Machine Learning (M1 IA)**. Il propose une solution complète (Notebooks d'analyse + Application Web) capable de :
+1.  **Classifier** un ordinateur portable selon sa configuration (Gaming, Ultrabook, Workstation...).
+2.  **Estimer** son prix de marché exact en Euros.
+
+---
+
+## 🚀 Fonctionnalités
+
+*   **Interface Web Moderne** : Une application **Streamlit** interactive et facile à utiliser.
+*   **Classification Intelligente** : Un modèle **KNN (K-Nearest Neighbors)** entraîné pour prédire la catégorie du laptop (ex: Ultrabook, Gaming) en fonction de ses specs.
+*   **Estimation Précise du Prix** : Un modèle de **Régression Ridge** optimisé qui prédit le prix en fonction de plus de 10 critères (CPU, GPU, RAM, Stockage SSD/HDD, résolution d'écran, etc.).
+*   **Données Réelles** : L'application charge dynamiquement les modèles de processeurs et cartes graphiques existants sur le marché pour des choix précis.
+
+## 🛠️ Stack Technique
+
+*   **Langage :** Python 3.9+
+*   **Interface Utilisateur :** [Streamlit](https://streamlit.io/)
+*   **Machine Learning :** [Scikit-Learn](https://scikit-learn.org/) (KNN, Linear Regression, Ridge, SMOTE)
+*   **Manipulation de Données :** Pandas, NumPy
+*   **Visualisation :** Matplotlib, Seaborn
+
+## 📂 Structure du Projet
+
+```bash
+Laptop_Expert/
+├── app/
+│   └── app.py               # 🚀 Le script principal de l'application Web
+├── data/
+│   └── laptop_prices.csv    # 📊 Le jeu de données utilisé
+├── models/                  # 🧠 Les modèles IA entraînés (.pkl)
+│   ├── knn_model.pkl        # Modèle de classification
+│   ├── price_model.pkl      # Modèle de régression
+│   └── ...                  # Scalers et encodeurs pour le prétraitement
+├── notebooks/               # 📓 Les carnets d'expérimentation
+│   ├── Classification_Notebook.ipynb
+│   └── Regression_Notebook.ipynb
+└── README.md                # 📄 Ce fichier
+```
+
+## 💿 Installation et Lancement
+
+1.  **Cloner le dépôt**
+    ```bash
+    git clone https://github.com/votre-username/Laptop_Expert.git
+    cd Laptop_Expert
+    ```
+
+2.  **Installer les dépendances**
+    Assurez-vous d'avoir Python installé. Installez les librairies nécessaires :
+    ```bash
+    pip install pandas numpy scikit-learn streamlit matplotlib seaborn imbalanced-learn
+    ```
+
+3.  **Lancer l'application**
+    ```bash
+    streamlit run app/app.py
+    ```
+    Une page web s'ouvrira automatiquement dans votre navigateur (généralement sur `http://localhost:8501`).
+
+## 🧠 Détails des Modèles
+
+### 1. Classification (Notebook 1)
+*   **Objectif :** Prédire le `TypeName` (Ultrabook, Gaming, Notebook...).
+*   **Méthode :** K-Nearest Neighbors (KNN).
+*   **Optimisation :** Utilisation de **SMOTE** pour équilibrer les classes minoritaires et recherche du meilleur indicateur `k`.
+
+### 2. Régression (Notebook 2)
+*   **Objectif :** Prédire le `Price_euros`.
+*   **Méthode :** Régression Ridge.
+*   **Performance :** Le modèle atteint un score $R^2$ d'environ **0.83** lors des tests, avec un apprentissage sur le logarithme du prix pour une meilleure robustesse aux valeurs extrêmes.
+
+
+---
+*Projet Universitaire - Master 1 Intelligence Artificielle*
