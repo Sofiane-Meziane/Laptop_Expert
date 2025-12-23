@@ -14,6 +14,7 @@ Ce projet a été réalisé dans le cadre du module de **Machine Learning (M1 IA
 *   **Classification Intelligente** : Un modèle **KNN (K-Nearest Neighbors)** entraîné pour prédire la catégorie du laptop (ex: Ultrabook, Gaming) en fonction de ses specs.
 *   **Estimation Précise du Prix** : Un modèle de **Régression Ridge** optimisé qui prédit le prix en fonction de plus de 10 critères (CPU, GPU, RAM, Stockage SSD/HDD, résolution d'écran, etc.).
 *   **Données Réelles** : L'application charge dynamiquement les modèles de processeurs et cartes graphiques existants sur le marché pour des choix précis.
+*   **Contexte Temporel** : Les modèles ont été entraînés sur des données de **2017 et début 2018**, reflétant les prix du marché de cette période.
 
 ## 🛠️ Stack Technique
 
