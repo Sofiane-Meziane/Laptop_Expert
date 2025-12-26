@@ -52,13 +52,27 @@ Laptop_Expert/
     cd Laptop_Expert
     ```
 
-2.  **Installer les dépendances**
-    Assurez-vous d'avoir Python installé. Installez les librairies nécessaires :
+2.  **Créer un environnement virtuel (Recommandé)**
+    Il est pratique de créer un environnement propre au projet pour éviter les conflits de versions.
+    
+    *   **Windows :**
+        ```bash
+        python -m venv venv
+        .\venv\Scripts\activate
+        ```
+    *   **Mac/Linux :**
+        ```bash
+        python3 -m venv venv
+        source venv/bin/activate
+        ```
+
+3.  **Installer les dépendances**
+    Une fois l'environnement activé, installez les paquets nécessaires listés dans `requirements.txt` :
     ```bash
-    pip install pandas numpy scikit-learn streamlit matplotlib seaborn imbalanced-learn
+    pip install -r requirements.txt
     ```
 
-3.  **Lancer l'application**
+4.  **Lancer l'application**
     ```bash
     streamlit run app/app.py
     ```
