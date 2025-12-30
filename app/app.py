@@ -19,10 +19,10 @@ DATA_PATH = os.path.join(BASE_DIR, '../data/laptop_prices.csv')
 def load_assets():
     try:
         # 1. Charger les Modèles
-        knn_model = pickle.load(open(os.path.join(MODEL_DIR, 'knn_model.pkl'), 'rb'))
-        knn_scaler = pickle.load(open(os.path.join(MODEL_DIR, 'knn_scaler.pkl'), 'rb'))
-        knn_le = pickle.load(open(os.path.join(MODEL_DIR, 'knn_label_encoder.pkl'), 'rb'))
-        knn_cols = pickle.load(open(os.path.join(MODEL_DIR, 'knn_columns.pkl'), 'rb'))
+        rf_model = pickle.load(open(os.path.join(MODEL_DIR, 'rf_model.pkl'), 'rb'))
+        rf_scaler = pickle.load(open(os.path.join(MODEL_DIR, 'rf_scaler.pkl'), 'rb'))
+        rf_le = pickle.load(open(os.path.join(MODEL_DIR, 'rf_label_encoder.pkl'), 'rb'))
+        rf_cols = pickle.load(open(os.path.join(MODEL_DIR, 'rf_columns.pkl'), 'rb'))
         
         price_model = pickle.load(open(os.path.join(MODEL_DIR, 'price_model.pkl'), 'rb'))
         price_cols = pickle.load(open(os.path.join(MODEL_DIR, 'price_columns.pkl'), 'rb'))
@@ -35,13 +35,13 @@ def load_assets():
             st.write(f"Chemin cherché : {DATA_PATH}")
             return None, None, None, None, None, None, None
 
-        return knn_model, knn_scaler, knn_le, knn_cols, price_model, price_cols, df_ref
+        return rf_model, rf_scaler, rf_le, rf_cols, price_model, price_cols, df_ref
     except Exception as e:
         st.error(f"❌ Erreur de chargement: {e}")
         st.write(f"Dossier Base: {BASE_DIR}")
         return None, None, None, None, None, None, None
 
-knn_model, knn_scaler, knn_le, knn_cols, price_model, price_cols, df_ref = load_assets()
+rf_model, rf_scaler, rf_le, rf_cols, price_model, price_cols, df_ref = load_assets()
 
 # -----------------------------------------------------------------------------
 # 2. FONCTION INTELLIGENTE (Conversion Utilisateur -> IA)
@@ -185,22 +185,22 @@ if df_ref is not None:
             'RetinaDisplay': 'Yes' if retina else 'No' 
         }
         
-        # --- 1. Classification (KNN/RandomForest) ---
+        # --- 1. Classification (RandomForest) ---
         # Préparation du vecteur
-        X_knn = create_input_dataframe(input_data, knn_cols)
+        X_rf = create_input_dataframe(input_data, rf_cols)
         
         # Remplissage des 0 pour les colonnes non présentes dans le dictionnaire
-        X_knn = X_knn.fillna(0)
+        X_rf = X_rf.fillna(0)
         
-        # Scaling (indispensable pour KNN)
+        # Scaling (indispensable pour KNN, gardé pour RF si scaler utilisé)
         # Attention : s'assurer que le scaler a été fit sur les mêmes colonnes
-        # En théorie oui si knn_cols correspond à X_train.columns
+        # En théorie oui si rf_cols correspond à X_train.columns
         try:
-            X_knn_scaled = knn_scaler.transform(X_knn)
+            X_rf_scaled = rf_scaler.transform(X_rf)
             
             # Prédiction
-            pred_type_encoded = knn_model.predict(X_knn_scaled)[0]
-            pred_type_name = knn_le.inverse_transform([pred_type_encoded])[0]
+            pred_type_encoded = rf_model.predict(X_rf_scaled)[0]
+            pred_type_name = rf_le.inverse_transform([pred_type_encoded])[0]
             
             # Affichage
             st.divider()
