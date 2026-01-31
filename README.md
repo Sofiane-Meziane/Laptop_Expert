@@ -89,8 +89,6 @@ Laptop_Expert/
 ### 2. Régression (Notebook 2)
 *   **Objectif :** Prédire le `Price_euros`.
 *   **Méthode :** Régression Ridge.
-*   **Performance :** Le modèle atteint un score $R^2$ d'environ **0.85** lors des tests (après optimisation des hyperparamètres), avec un apprentissage sur le logarithme du prix pour une meilleure robustesse aux valeurs extrêmes.
-
-
----
-*Projet Universitaire - Master 1 Intelligence Artificielle*
+*   **Performance :** Le modèle atteint un score $R^2$ d’environ **0.86** sur le jeu de test.  
+    L’hyperparamètre de régularisation est optimisé par **validation croisée (5-fold CV)** afin d’améliorer la capacité de généralisation du modèle et d’éviter toute fuite d’information.  
+    L’apprentissage est réalisé sur le logarithme du prix pour une meilleure robustesse face aux valeurs extrêmes.
