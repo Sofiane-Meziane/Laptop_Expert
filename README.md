@@ -52,19 +52,30 @@ Laptop_Expert/
     cd Laptop_Expert
     ```
 
-2.  **Créer un environnement virtuel (Recommandé)**
-    Il est pratique de créer un environnement propre au projet pour éviter les conflits de versions.
-    
-    *   **Windows :**
-        ```bash
-        python -m venv venv
-        .\venv\Scripts\activate
-        ```
-    *   **Mac/Linux :**
-        ```bash
-        python3 -m venv venv
-        source venv/bin/activate
-        ```
+2. **Créer l'environnement virtuel**
+
+   Il est vivement recommandé de créer un environnement propre au projet pour éviter les conflits de versions entre les différentes bibliothèques.
+
+   * **Option A : Avec Miniconda / Anaconda (Recommandé)**
+     ```bash
+     # Création de l'environnement avec Python 3.11
+     conda create -n laptop_env python=3.11
+     
+     # Activation de l'environnement
+     conda activate laptop_env
+     ```
+
+   * **Option B : Avec Python standard (venv)**
+     ```bash
+     # Création de l'environnement virtuel
+     python -m venv venv
+
+     # Activation (Windows) :
+     .\venv\Scripts\activate
+
+     # Activation (Mac/Linux) :
+     source venv/bin/activate
+     ```
 
 3.  **Installer les dépendances**
     Une fois l'environnement activé, installez les paquets nécessaires listés dans `requirements.txt` :
