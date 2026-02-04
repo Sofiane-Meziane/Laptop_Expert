@@ -29,7 +29,7 @@ Ce projet a été réalisé dans le cadre du module de **Machine Learning (M1 IA
 ## 📂 Structure du Projet
 
 ```bash
-Laptop_Expert/
+LaptopExpert/
 ├── app/
 │   └── app.py               # 🚀 Le script principal de l'application Web
 ├── data/
@@ -48,8 +48,8 @@ Laptop_Expert/
 
 1.  **Cloner le dépôt**
     ```bash
-    git clone https://github.com/Sofiane-Meziane/Laptop_Expert.git
-    cd Laptop_Expert
+    git clone https://github.com/Sofiane-Meziane/LaptopExpert.git
+    cd LaptopExpert
     ```
 
 2. **Créer l'environnement virtuel**
