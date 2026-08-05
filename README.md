@@ -6,7 +6,7 @@
 
 Ce projet a été réalisé dans le cadre du module de **Machine Learning (M1 IA)**. Il propose une solution complète (Notebooks d'analyse + Application Web) capable de :
 1.  **Classifier** un ordinateur portable selon sa configuration (Gaming, Ultrabook, Workstation...).
-2.  **Estimer** son prix de marché exact en Euros.
+2.  **Estimer** le prix d'un ordinateur portable selon les conditions du marché représentées dans le dataset (2017–2018).
 
 ---
 
